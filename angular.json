@@ -27,9 +27,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@clr/icons/clr-icons.min.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
