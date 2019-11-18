@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ClarityModule } from '@clr/angular';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { ClarityIcons } from '@clr/icons';
+import '@clr/icons/shapes/core-shapes';
 
 import { AppComponent } from './app.component';
 
@@ -28,7 +30,8 @@ ClarityIcons.add({
   ],
   imports: [
     BrowserModule,
-    ClarityModule
+    ClarityModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

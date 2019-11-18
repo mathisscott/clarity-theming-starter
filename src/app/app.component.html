@@ -1,32 +1,83 @@
 <div class="main-container">
-	<header class="header-2">
-		<div class="branding">
-			<a class="nav-link">
-				<clr-icon shape="logo" size="24"></clr-icon>
-				<span class="title">Theming Clarity</span>
-			</a>
-		</div>
-		<div class="header-nav">
-			<a class="active nav-link nav-text">Home</a>
-		</div>
-	</header>
-	<div class="content-container">
-		<div class="content-area">
-			<h3>Theming Clari†y TODO:</h3>
-			<ul>
-				<li>Get app working and using Clarity SASS (not CSS)</li>
-				<li>Add reasonable componentry to app (cards? forms? buttons? vertical nav?)</li>
-				<li>Add alert that can be used/reused for deprecation warnings and info</li>
-				<li>Stop and begin branching to create SASS vs. CSS var themes</li>
-			</ul>
-
-      <h3>Themes to cover:</h3>
-			<ul>
-				<li>Vanilla SASS-based theming</li>
-				<li>CSS var based theming</li>
-				<li>CSS var based white-labeling</li>
-				<li>CSS var based theme switching (with pony/polyfills)</li>
-			</ul>
-		</div>
-	</div>
+  <header class="header-2">
+    <div class="branding">
+      <a class="nav-link">
+        <clr-icon shape="logo" size="24"></clr-icon>
+        <span class="title">Theming Clarity</span>
+      </a>
+    </div>
+    <div class="header-nav">
+      <a class="active nav-link nav-text">Home</a>
+    </div>
+  </header>
+  <div class="content-container">
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
+      <a clrVerticalNavLink class="active">
+        <clr-icon clrVerticalNavIcon shape="calendar"></clr-icon>
+        Calendar
+      </a>
+      <a clrVerticalNavLink>
+        <clr-icon clrVerticalNavIcon shape="cloud"></clr-icon>
+        Cloud
+      </a>
+      <a clrVerticalNavLink>
+        <clr-icon clrVerticalNavIcon shape="user"></clr-icon>
+        User
+      </a>
+      <a clrVerticalNavLink>
+        <clr-icon clrVerticalNavIcon shape="cog"></clr-icon>
+        Settings
+      </a>
+    </clr-vertical-nav>
+    <div class="content-area">
+      <clr-alert [clrAlertClosable]="false" clrAlertType="danger">
+        <clr-alert-item>
+          <span class="alert-text">
+            Deprecations and notices go here.
+          </span>
+        </clr-alert-item>
+      </clr-alert>
+      <div class="clr-row">
+        <div class="clr-col-lg-6 clr-col-12">
+          <div class="card">
+            <div class="card-header">
+              This is a card
+            </div>
+            <div class="card-block">
+              <div class="card-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus eius consectetur, excepturi similique aut, in sapiente officiis veritatis facilis incidunt debitis. Sit, a odio eius quod nesciunt consectetur facere.</p>
+                <br>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-sm btn-link">Footer Action 1</button>
+              <button class="btn btn-sm btn-link">Footer Action 2</button>
+            </div>
+          </div>
+        </div>
+        <div class="clr-col-lg-6 clr-col-12">
+          <div class="card">
+            <div class="card-block">
+              <div class="card-title">
+                Form in a Card
+              </div>
+              <div class="card-text">
+                <form clrForm>
+                  <clr-input-container>
+                    <label>Field 1 label</label>
+                    <input clrInput type="text" [(ngModel)]="model.field1" name="example1" />
+                  </clr-input-container>
+                  <clr-input-container>
+                    <label>Field 2 label</label>
+                    <input clrInput type="text" [(ngModel)]="model.field2" name="example2" />
+                  </clr-input-container>
+                  <p><button class="btn btn-primary">Ok</button></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'theming';
+  model = {
+    field1: 'ohai',
+    field2: 'howdy'
+  }
 }
