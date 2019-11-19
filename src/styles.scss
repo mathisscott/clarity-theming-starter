@@ -1,7 +1,7 @@
 // importing the Clarity SCSS
 
-@import '~@clr/ui/src/main';
+@import './overrides';
 
 .branding svg {
-    fill: $clr-header-font-color;
+    fill: var(--clr-header-font-color, #FFFFFF);
 }
