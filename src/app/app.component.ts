@@ -10,5 +10,5 @@ export class AppComponent {
   model = {
     field1: 'ohai',
     field2: 'howdy'
-  }
+  };
 }

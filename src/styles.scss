@@ -1,5 +1,6 @@
 // importing the Clarity SCSS
 
+@import './overrides';
 @import '../node_modules/@clr/ui/src/main';
 
 .branding svg {

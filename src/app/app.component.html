@@ -33,7 +33,7 @@
       <clr-alert [clrAlertClosable]="false" clrAlertType="danger">
         <clr-alert-item>
           <span class="alert-text">
-            Deprecations and notices go here.
+            SASS-based theming is deprecated in Clarity 3.0. This means that it will no longer be enabled in Clarity version 4 and later. See the Clarity theming documentation for guidance on how to migrate from SASS-based theming in Clarity to CSS custom property theming.
           </span>
         </clr-alert-item>
       </clr-alert>
@@ -41,11 +41,11 @@
         <div class="clr-col-lg-6 clr-col-12">
           <div class="card">
             <div class="card-header">
-              This is a card
+              SASS Based Theming
             </div>
             <div class="card-block">
               <div class="card-text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus eius consectetur, excepturi similique aut, in sapiente officiis veritatis facilis incidunt debitis. Sit, a odio eius quod nesciunt consectetur facere.</p>
+                <p>Overriding SASS variables in Clarity requires that you compile the Clarity SASS within your own project and disable CSS custom properties in the Clarity SASS-to-CSS output.</p>
                 <br>
               </div>
             </div>
