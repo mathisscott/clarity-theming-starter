@@ -33,10 +33,76 @@
       <clr-alert [clrAlertClosable]="false" clrAlertType="danger">
         <clr-alert-item>
           <span class="alert-text">
-            Deprecations and notices go here.
+            Starting in Clarity 3.0, Clarity's rem-based sizing changed from 24px to 20px. Please use either the rem-sizing variables in Clarity or multiply any exising rem values relying on the previous base size of 24px by 1.2.
           </span>
         </clr-alert-item>
       </clr-alert>
+      <div class="clr-row">
+        <div class="clr-col-12">
+          <div class="stripe">
+            <h1>Rem Units in Clarity 3+</h1>
+            <div class="clr-row">
+              <div class="clr-col-md-6 clr-col-12">
+                <p>Leaving rem units in your application that used to rely on the 24px base sizing of Clarity will result in smaller spacing and sizes.</p>
+              </div>
+              <div class="clr-col-md-6 clr-col-12">
+                <div class="code">
+                  <p>0.5rem was <b>12px</b> in Clarity 2.x.</p>
+                  <p>0.5rem is equivalent to <b>10px</b> in Clarity 3.x and up.</p>
+                </div>
+              </div>
+            </div>
+            <div class="clr-row">
+              <div class="clr-col-md-6 clr-col-12">
+                <p>The recommended fix is replacing set rem units in your application with Clarity's remSize variables.</p>
+                <p>These can be found in <code>/node_modules/@clr/ui/src/utils/_variables.global.scss</code>.</p>
+                <p>To import them you will also need to import the color variables from <code>/node_modules/@clr/ui/src/color/_variables.color.scss</code>.</p>
+              </div>
+              <div class="clr-col-md-6 clr-col-12">
+                <div class="code">
+                  <p>
+                      padding: 0.25rem 0.5rem;<br>
+                      margin: 0.75rem;<br>
+                      font-size: 0.416667rem; // equals 10px
+                  </p>
+                  <p><b>...becomes...</b></p>
+                  <p>
+                      @import '~@clr/ui/src/color/variables.color';<br>
+                      @import '~@clr/ui/src/utils/variables.global';<br>
+                      padding: $clr_baselineRem_0_25 $clr_baselineRem_0_5;<br>
+                      margin: $clr_baselineRem_0_75;<br>
+                      font-size: $clr_baselineRem_10px; // we have some px values defined for convenience
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="clr-row">
+              <div class="clr-col-md-6 clr-col-12">
+                <p>Alternately, you could implement your own fix by multiplying existing rem units by 1.2.</p>
+                <p>You could create a mixin that does this for you, similarly to how Clarity remSizing variables are implemented. Or just update your values in place.</p>
+              </div>
+              <div class="clr-col-md-6 clr-col-12">
+                <div class="code">
+                  <p>
+                      padding: 0.25rem 0.5rem;<br>
+                      margin: 0.75rem;<br>
+                      font-size: 0.416667rem; // equals 10px
+                  </p>
+                  <p><b>...becomes...</b></p>
+                  <p>
+                      @function updateRem($size: 1rem) {{ '{' }}
+                        return $size * 1.2; 
+                      {{ '}' }}
+                      padding: updateRem(0.25rem) updateRem(0.5rem);<br>
+                      margin: 0.9rem; // equals 1.2 * 0.75rem<br>
+                      font-size: 1.2 * 0.416667rem;
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="clr-row">
         <div class="clr-col-lg-6 clr-col-12">
           <div class="card">
