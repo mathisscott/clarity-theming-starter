@@ -1,4 +1,4 @@
-Branched from: clarity-css-theming
+Branched from: clarity-css-whitelabeling
 
 # Theming
 
