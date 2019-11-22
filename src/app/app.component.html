@@ -9,6 +9,12 @@
     <div class="header-nav">
       <a class="active nav-link nav-text">Home</a>
     </div>
+    <div class="header-actions">
+      <a href="javascript://" class="nav-link nav-icon-text">
+          <input type="checkbox" clrToggle (click)="toggleDarkTheme()" />
+          <span class="nav-text">Toggle Dark Theme</span>
+      </a>
+    </div>
   </header>
   <div class="content-container">
     <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed">
@@ -41,12 +47,13 @@
         <div class="clr-col-lg-6 clr-col-12">
           <div class="card">
             <div class="card-header">
-              Custom Properties Theming
+              Toggling Stylesheets
             </div>
             <div class="card-block">
               <div class="card-text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus eius consectetur, excepturi similique aut, in sapiente officiis veritatis facilis incidunt debitis. Sit, a odio eius quod nesciunt consectetur facere.</p>
-                <br>
+                <p>An easy way to apply themes is to enable/disable stylesheets.</p>
+                <p>Here we have a toggle in the header that is enabling/disabling the dark theme. The approach illustrated is fairly tightly coupled to the order of the stylesheets as they are applied via webpack. There may be better approaches but the combination of webpack and Angular CLI pushed the demo in this direction.</p>
+                <p>This example is meant to illustrate one approach to dynamic theming. It may not constitute the best or recommended way for your particular use case.</p>
               </div>
             </div>
             <div class="card-footer">
@@ -62,7 +69,8 @@
                 Form in a Card
               </div>
               <div class="card-text">
-                <form clrForm>
+                  <p>Note that to support IE11 we need to import and execute <code>runCssVarsPolyfill</code>.</p>
+                  <form clrForm>
                   <clr-input-container>
                     <label>Field 1 label</label>
                     <input clrInput type="text" [(ngModel)]="model.field1" name="example1" />

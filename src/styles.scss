@@ -1,7 +1,18 @@
 // importing the Clarity SCSS
 
-@import './dark-theme';
+@import '~@clr/ui/src/color/variables.color';
+@import '~@clr/ui/src/utils/variables.global';
 
 .branding svg {
     fill: var(--clr-header-font-color, #FFFFFF);
+}
+
+.header-actions .clr-toggle-wrapper {
+    display: inline-block;
+    margin-left: $clr_baselineRem_0_25;
+    margin-right: 0;
+}
+
+header .header-actions .nav-link.nav-icon-text .nav-text {
+    padding-left: 0;
 }

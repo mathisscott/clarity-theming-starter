@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { ClarityIcons } from '@clr/icons';
 import '@clr/icons/shapes/core-shapes';
 
+import { runCssVarsPolyfill } from '@clr/core';
+
 import { AppComponent } from './app.component';
 
 ClarityIcons.add({
@@ -23,6 +25,8 @@ ClarityIcons.add({
     </svg>
   `
 });
+
+runCssVarsPolyfill();
 
 @NgModule({
   declarations: [
