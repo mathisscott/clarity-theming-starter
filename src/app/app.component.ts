@@ -60,6 +60,7 @@ const themes = {
 export class AppComponent {
   title = 'theming';
   theme = 'default';
+  collapsed = false;
   model = {
     field1: 'ohai',
     field2: 'howdy',
