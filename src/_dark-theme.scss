@@ -458,6 +458,7 @@
     --clr-thead-bgcolor: hsl(201, 30%, 15%);
     --clr-table-bgcolor: hsl(198, 28%, 18%);
     --clr-table-font-color: hsl(203, 16%, 72%);
+    --clr-thead-color: var(--clr-table-font-color);
     --clr-datagrid-default-border-color: hsl(208, 16%, 34%);
     --clr-table-header-border-bottom-color: var(--clr-datagrid-default-border-color);
     --clr-table-footer-border-top-color: var(--clr-datagrid-default-border-color);
